@@ -11,14 +11,13 @@ sudo systemctl enable gdm
 # pacman -S --noconfirm xf86-video-amdgpu
 
 # Install yay
-cd /tmp
 git clone https://aur.archlinux.org/yay.git
 cd yay && makepkg -si
 cd .. && rm -rf yay
 
 # Install base packages
-sudo yay -Syy brave-bin spotify
-sudo pacman -Syy --noconfirm alacritty tmux neovim vlc youtube-dl lxappearance qt5-base timeshift zsh zsh-completion
+sudo pacman -Syy --nocomfirm alacritty tmux neovim vlc youtube-dl lxappearance qt5-base timeshift zsh zsh-completions
+yay -Syy --noconfirm brave-bin spotify
 
 # NOTE: Install fallback terminal becuase of graphical issues with alacritty in VMs etc.
 sudo pacman -S --noconfirm konsole
@@ -41,9 +40,3 @@ echo "alias vim=nvim" >> ~/.bashrc
 
 # Zsh setup
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-sudo pacman -Syy --noconfirm zsh zsh-completion
-
-echo " "
-echo "User bootstrap done. Don't forget to run zsh to configure it."
-
-exit 1;
