@@ -36,13 +36,11 @@ mount -t efivarfs efivarfs /sys/firmware/efi/efivars/
 bootctl install
 BOOT_LOADER_CONFIG_PATH=/boot/loader/entries/default.conf
 clear
-read -p "What would you like your boot title to be?" BOOT_NAME
-cat > $BOOT_LOADER_CONFIG_PATH << "EOF"
-title $BOOT_NAME
-linux /vmlinuz-linux
-initrd /intel-ucode.img
-initrd /initramfs-linux.img
-EOF
+read -p "What would you like your boot title to be? " BOOT_NAME
+echo "title $BOOT_NAME" > $BOOT_LOADER_CONFIG_PATH
+echo "linux /vmlinuz-linux" >> $BOOT_LOADER_CONFIG_PATH
+echo "initrd /intel-ucode.img" >> $BOOT_LOADER_CONFIG_PATH
+echo "initrd /initramfs-linux.img" >> $BOOT_LOADER_CONFIG_PATH
 
 # Secure boot drive
 clear
