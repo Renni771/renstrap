@@ -16,8 +16,8 @@ cd yay && makepkg -si
 cd .. && rm -rf yay
 
 # Install base packages
-sudo pacman -Syy --nocomfirm alacritty tmux neovim vlc youtube-dl lxappearance qt5-base timeshift zsh zsh-completions
-yay -Syy --noconfirm brave-bin spotify
+sudo pacman -Syy --nocomfirm alacritty tmux neovim vlc youtube-dl lxappearance qt5-base zsh zsh-completions
+yay -Syy --noconfirm brave-bin spotify timeshift ttf-meslo-nerd-font-powerlevel10k
 
 # NOTE: Install fallback terminal becuase of graphical issues with alacritty in VMs etc.
 sudo pacman -S --noconfirm konsole
