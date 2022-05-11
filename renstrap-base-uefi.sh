@@ -19,7 +19,7 @@ function main {
   echo "[boot] - $BOOT_PARTITION"
   echo "[swap] - $SWAP_PARTITION"
   echo "[root] - $ROOT_PARTITION"
-  echo "[homt] - $HOME_PARTITION"
+  echo "[home] - $HOME_PARTITION"
 
   # Make file systems
   mkfs.fat -F32 $BOOT_PARTITION
